@@ -1,8 +1,6 @@
 # ChaosMonkey.Guards.NetStandard
 ChaosMonkey.Guards.NetStandard is a simple code guard library for .NET Standard projects.
 
-![Build Status](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_apis/build/status/ChaosMonkey.Guards.NetStandard-CI)
-
 ## Guard
 
 > A boolean expression that must evaluate to true if the program execution is to continue in the branch in question. 
