@@ -1,7 +1,7 @@
 # ChaosMonkey.Guards.NetStandard
 ChaosMonkey.Guards.NetStandard is a simple code guard library for .NET Standard projects.
 
-[![Build status](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_apis/build/status/ChaosMonkey.Guards.NetStandard-CI)](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_build/latest?definitionId=19)
+![Build Status](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_apis/build/status/ChaosMonkey.Guards.NetStandard-CI)
 
 ## Guard
 
