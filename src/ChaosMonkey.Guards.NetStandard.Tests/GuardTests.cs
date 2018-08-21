@@ -125,5 +125,86 @@ namespace ChaosMonkey.Guards.NetStandard.Tests
 
             Assert.Equal("Specified argument was out of the range of valid values.\r\nParameter name: [Unknown Argument Name]", exception.Message);
         }
+
+        [Fact]
+        public void IsTrue_WhenFalse_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsTrue(false, "Condition must evaluate to true."));
+
+            Assert.Equal("Condition must evaluate to true.", exception.Message);
+        }
+
+        [Fact]
+        public void IsTrue_WhenFalseAndMessageIsNull_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsTrue(false, "Condition must be true."));
+
+            Assert.Equal("Condition must be true.", exception.Message);
+        }
+
+        [Fact]
+        public void IsFalse_WhenTrue_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsFalse(true, "Condition must evaluate to false."));
+
+            Assert.Equal("Condition must evaluate to false.", exception.Message);
+        }
+
+        [Fact]
+        public void IsFalse_WhenTrueAndMessageIsNull_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsFalse(true, null));
+
+            Assert.Equal("Condition must be false.", exception.Message);
+        }
+
+        [Fact]
+        public void IsRequiredThat_WhenFalse_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsRequiredThat(false, "Condition must evaluate to true."));
+
+            Assert.Equal("Condition must evaluate to true.", exception.Message);
+        }
+
+        [Fact]
+        public void IsRequiredThat_WhenFalseAndMessageIsNull_ThrowsExpectedException()
+        {
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsRequiredThat(false, null));
+
+            Assert.Equal("The required argument expectation was not met.", exception.Message);
+        }
+
+        [Fact]
+        public void IsGreaterThan_WhenValueIsGreaterThanExpected_ReturnsArgument()
+        {
+            const int value = 5;
+            const int expected = 3;
+
+            var result = Guard.IsGreaterThan(value, expected, nameof(value));
+
+            Assert.Equal(value, result);
+        }
+
+        [Fact]
+        public void IsGreaterThan_WhenValueIsLessThanExpected_ThrowsExpectedException()
+        {
+            const int value = 3;
+            const int expected = 5;
+
+            var exception = Assert.Throws<ArgumentOutOfRangeException>(()=> Guard.IsGreaterThan(value, expected, nameof(value)));
+
+            Assert.Equal("Specified argument was out of the range of valid values.\r\nParameter name: Argument 'value' must be greater than '5' but was '3'.", exception.Message);
+        }
+
+        [Fact]
+        public void IsGreaterThan_WhenValueIsEqualToExpected_ThrowsExpectedException()
+        {
+            const int value = 5;
+            const int expected = 5;
+
+            var exception = Assert.Throws<ArgumentOutOfRangeException>(() => Guard.IsGreaterThan(value, expected, nameof(value)));
+
+            Assert.Equal("Specified argument was out of the range of valid values.\r\nParameter name: Argument 'value' must be greater than '5' but was '5'.", exception.Message);
+        }
     }
 }

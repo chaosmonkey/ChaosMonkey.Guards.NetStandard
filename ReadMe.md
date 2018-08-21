@@ -1,7 +1,7 @@
 # ChaosMonkey.Guards.NetStandard
-A simple code guard library for .NET Standard projects.
+ChaosMonkey.Guards.NetStandard is a simple code guard library for .NET Standard projects.
 
-ChaosMonkey.Guards.NetStandard is a library to make it simple to add and easy to read guard clauses in you .Net methods.
+[![Build status](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_apis/build/status/ChaosMonkey.Guards.NetStandard-CI)](https://chaosmonkey.visualstudio.com/ChaosMonkey.Guards.NetStandard/_build/latest?definitionId=19)
 
 ## Guard
 

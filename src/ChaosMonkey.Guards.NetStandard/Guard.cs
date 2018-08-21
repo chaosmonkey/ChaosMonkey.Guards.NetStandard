@@ -289,7 +289,7 @@ namespace ChaosMonkey.Guards
         /// <exception cref="ArgumentException"></exception>
         public static void IsFalse(bool condition, string message)
         {
-            IsRequiredThat(!condition, message ?? "Condition must be true.");
+            IsRequiredThat(!condition, message ?? "Condition must be false.");
         }
 
         private static string GetSafeArgumentName(string name)
