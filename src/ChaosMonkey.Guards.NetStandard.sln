@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaosMonkey.Guards.NetStandard", "ChaosMonkey.Guards.NetStandard\ChaosMonkey.Guards.NetStandard.csproj", "{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaosMonkey.Guards.NetStandard.Tests", "ChaosMonkey.Guards.NetStandard.Tests\ChaosMonkey.Guards.NetStandard.Tests.csproj", "{753E2830-B6F1-4165-A27A-71F9B7589C09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753E2830-B6F1-4165-A27A-71F9B7589C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753E2830-B6F1-4165-A27A-71F9B7589C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753E2830-B6F1-4165-A27A-71F9B7589C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753E2830-B6F1-4165-A27A-71F9B7589C09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ECC7AD0-C3FA-49FC-943F-B3DCCC43B6CA}
+	EndGlobalSection
+EndGlobal
