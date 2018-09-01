@@ -107,7 +107,7 @@ namespace ChaosMonkey.Guards
             if (argument.CompareTo(expected) < 0)
             {
                 var name = GetSafeArgumentName(argumentName);
-                throw new ArgumentOutOfRangeException(($"Argument '{name}' must be greater than or equak to '{expected}' but was '{argument}'."));
+                throw new ArgumentOutOfRangeException(($"Argument '{name}' must be greater than or equal to '{expected}' but was '{argument}'."));
             }
             return argument;
         }
