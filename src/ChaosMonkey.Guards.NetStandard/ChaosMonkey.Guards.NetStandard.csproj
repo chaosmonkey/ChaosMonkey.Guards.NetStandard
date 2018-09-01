@@ -15,7 +15,7 @@
     <PackageProjectUrl>https://github.com/chaosmonkey/ChaosMonkey.Guards.NetStandard</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags></PackageTags>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/38a2b68436e56e9e3caf1fd5bd9487e0?s=80</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/chaosmonkey/ChaosMonkey.Guards.NetStandard/development/assets/Icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/chaosmonkey/ChaosMonkey.Guards.NetStandard</RepositoryUrl>
   </PropertyGroup>
 
