@@ -10,6 +10,6 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 before_build:
-- ps: 'dotnet restore'
+- ps: 'dotnet restore .\src\ChaosMonkey.Guards.NetStandard.sln'
 build:
   verbosity: minimal
