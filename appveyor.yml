@@ -2,6 +2,9 @@ version: 1.0.{build}
 skip_tags: true
 image: Visual Studio 2017
 configuration: Release
+environment:
+  msg:
+    secure: s+mD62JCL4XbsfkT/MyPBQ==
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -18,3 +21,10 @@ after_build:
 - ps: '.\build\post-build.ps1'
 artifacts:
 - path: '*.nupkg'
+deploy:
+  provider: NuGet
+  server: https://www.myget.org/F/chaosmonkey/api/v2/package                   # remove to push to NuGet.org
+  api_key:
+    secure: A7k36Z/TnM1p9DRmr7jgZWe5GA+rAOuvwhQReJqUXeNce55gfFCKIadPepg0yK2g
+  skip_symbols: false
+  artifact: /.*\.nupkg/
