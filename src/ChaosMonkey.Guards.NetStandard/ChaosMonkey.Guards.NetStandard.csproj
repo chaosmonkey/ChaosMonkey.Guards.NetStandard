@@ -3,9 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <RootNamespace>ChaosMonkey.Guards</RootNamespace>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
-    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0</Version>
+    <Authors>Larry House</Authors>
+    <Company />
+    <Product>ChaosMonkey.Guards.NetStandard</Product>
+    <Description>A simple code guard library for .NET Standard projects.</Description>
+    <Copyright>© Copyright 2018 Larry House</Copyright>
+    <PackageLicenseUrl>https://github.com/chaosmonkey/ChaosMonkey.Guards.NetStandard/blob/master/License.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/chaosmonkey/ChaosMonkey.Guards.NetStandard</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags></PackageTags>
+    <PackageIconUrl>https://secure.gravatar.com/avatar/38a2b68436e56e9e3caf1fd5bd9487e0?s=80</PackageIconUrl>
+    <RepositoryUrl>https://github.com/chaosmonkey/ChaosMonkey.Guards.NetStandard</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

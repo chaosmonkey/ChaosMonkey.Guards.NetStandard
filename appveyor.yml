@@ -2,9 +2,6 @@ version: 1.0.{build}
 skip_tags: true
 image: Visual Studio 2017
 configuration: Release
-environment:
-  msg:
-    secure: s+mD62JCL4XbsfkT/MyPBQ==
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
