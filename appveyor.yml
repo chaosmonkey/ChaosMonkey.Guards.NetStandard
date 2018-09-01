@@ -10,6 +10,10 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 before_build:
-- ps: 'dotnet restore .\src\ChaosMonkey.Guards.NetStandard.sln'
+- ps: '.\build\pre-build.ps1'
 build:
   verbosity: minimal
+after_build:
+- ps: '#script'
+artifacts:
+- path: '*.nupkg'
