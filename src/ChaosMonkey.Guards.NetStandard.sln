@@ -3,9 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaosMonkey.Guards.NetStandard", "ChaosMonkey.Guards.NetStandard\ChaosMonkey.Guards.NetStandard.csproj", "{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChaosMonkey.Guards.NetStandard", "ChaosMonkey.Guards.NetStandard\ChaosMonkey.Guards.NetStandard.csproj", "{6E4EA8CE-EABC-4541-8C9D-5430DA017A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChaosMonkey.Guards.NetStandard.Tests", "ChaosMonkey.Guards.NetStandard.Tests\ChaosMonkey.Guards.NetStandard.Tests.csproj", "{753E2830-B6F1-4165-A27A-71F9B7589C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChaosMonkey.Guards.NetStandard.Tests", "ChaosMonkey.Guards.NetStandard.Tests\ChaosMonkey.Guards.NetStandard.Tests.csproj", "{753E2830-B6F1-4165-A27A-71F9B7589C09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{D23DD687-5EEB-411B-89B4-AFA60C667595}"
+	ProjectSection(SolutionItems) = preProject
+		..\License.txt = ..\License.txt
+		..\ReadMe.md = ..\ReadMe.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{E21E58E3-2536-4438-BB98-1650F45DD249}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\appveyor.yml = ..\appveyor.yml
+		..\build\post-build.ps1 = ..\build\post-build.ps1
+		..\build\pre-build.ps1 = ..\build\pre-build.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
