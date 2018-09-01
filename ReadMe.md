@@ -1,10 +1,13 @@
 # ChaosMonkey.Guards.NetStandard
 ChaosMonkey.Guards.NetStandard is a simple code guard library for .NET Standard projects.
 
+## Build
+[![Build status](https://ci.appveyor.com/api/projects/status/xma47bsbinvwdvje?svg=true)](https://ci.appveyor.com/project/chaosmonkey/chaosmonkey-guards-netstandard)
+
 ## Guard
 
 > A boolean expression that must evaluate to true if the program execution is to continue in the branch in question. 
--- Wikipedia
+  -- Wikipedia
 
 Typically guard statements are added at the beginning of a method call to verify that certain conditions have been met by the arguments that were passed into the call. For example a null check. The idea is that it is better to verify that the value is not illegal (null in this case) and fail fast if it is, rather than allow the code to fail at a later point due to the invalid input.
 
