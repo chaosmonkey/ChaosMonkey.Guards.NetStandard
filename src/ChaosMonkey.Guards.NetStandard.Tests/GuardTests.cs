@@ -95,6 +95,86 @@ namespace ChaosMonkey.Guards.NetStandard.Tests
         }
 
         [Fact]
+        public void IsNotNullOrWhitespace_WhenNotNullOrWhitespaceOnly_ReturnsArgument()
+        {
+            const string argument = "valid";
+
+            var result = Guard.IsNotNullOrWhitespace(argument, nameof(argument));
+
+            Assert.Same(argument, result);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenNotNullOrWhitespaceOnlyAndNameIsNull_ReturnsArgument()
+        {
+            const string argument = "valid";
+
+            var result = Guard.IsNotNullOrWhitespace(argument, null);
+
+            Assert.Same(argument, result);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenNull_ThrowsExpectedException()
+        {
+            string argument = null;
+
+            var exception = Assert.Throws<ArgumentNullException>(()=> Guard.IsNotNullOrWhitespace(argument, nameof(argument)));
+
+            Assert.Equal("Value cannot be null.\r\nParameter name: argument", exception.Message);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenNullAndNameIsNull_ThrowsExpectedException()
+        {
+            string argument = null;
+
+            var exception = Assert.Throws<ArgumentNullException>(() => Guard.IsNotNullOrWhitespace(argument, null));
+
+            Assert.Equal("Value cannot be null.\r\nParameter name: [Unknown Argument Name]", exception.Message);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenEmpty_ThrowsExpectedException()
+        {
+            string argument = string.Empty;
+
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsNotNullOrWhitespace(argument, nameof(argument)));
+
+            Assert.Equal("Parameter 'argument' cannot be empty or whitespace only, but was '[EMPTY]'.\r\nParameter name: argument", exception.Message);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenEmptyAndNameIsNull_ThrowsExpectedException()
+        {
+            string argument = string.Empty;
+
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsNotNullOrWhitespace(argument, null));
+
+            Assert.Equal("Parameter '[Unknown Argument Name]' cannot be empty or whitespace only, but was '[EMPTY]'.\r\nParameter name: [Unknown Argument Name]", exception.Message);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenWhitespaceOnly_ThrowsExpectedException()
+        {
+            string argument = "\r\n\t\f";
+
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsNotNullOrWhitespace(argument, nameof(argument)));
+
+            Assert.Equal("Parameter 'argument' cannot be empty or whitespace only, but was '[WHITESPACE-ONLY]'.\r\nParameter name: argument", exception.Message);
+        }
+
+        [Fact]
+        public void IsNotNullOrWhitespace_WhenWhitespaceOnlyAndNameIsNull_ThrowsExpectedException()
+        {
+            string argument = "\r\n\t\f";
+
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsNotNullOrWhitespace(argument, null));
+
+            Assert.Equal("Parameter '[Unknown Argument Name]' cannot be empty or whitespace only, but was '[WHITESPACE-ONLY]'.\r\nParameter name: [Unknown Argument Name]", exception.Message);
+        }
+
+        [Fact]
         public void IsNotDefault_WhenArgumentIsNotDefaultValueForItsType_ReturnsArgument()
         {
             var time = DateTime.Now;

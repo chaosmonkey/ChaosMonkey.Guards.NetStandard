@@ -43,6 +43,54 @@ namespace ChaosMonkey.Guards
         }
 
         /// <summary>
+        /// Verifies an argument is not an empty string
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <param name="argumentName"></param>
+        /// <returns>Original argument</returns>
+        public static string IsNotEmpty(string argument, string argumentName)
+        {
+            if (argument.Length==0)
+            {
+                var name = GetSafeArgumentName(argumentName);
+                throw new ArgumentException($"Parameter '{name}' cannot be empty.", name);
+            }
+            return argument;
+        }
+
+        /// <summary>
+        /// Verifies argument is not null or an empty string
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <param name="argumentName"></param>
+        /// <returns>Original argument</returns>
+        public static string IsNotNullOrEmpty(string argument, string argumentName)
+        {
+            return IsNotEmpty(IsNotNull(argument, argumentName), argumentName);
+        }
+
+        /// <summary>
+        /// Verifies argument is not null, empty or whitespace only
+        /// </summary>
+        /// <param name="argument"></param>
+        /// <param name="argumentName"></param>
+        /// <returns>Original argument</returns>
+        public static string IsNotNullOrWhitespace(string argument, string argumentName)
+        {
+            if (string.IsNullOrWhiteSpace(argument))
+            {
+                var name = GetSafeArgumentName(argumentName);
+                if (argument == null)
+                {
+                    throw new ArgumentNullException(name);
+                }
+                var state = (argument.Length > 0) ? "[WHITESPACE-ONLY]" : "[EMPTY]";
+                throw new ArgumentException($"Parameter '{name}' cannot be empty or whitespace only, but was '{state}'.", name);
+            }
+            return argument;
+        }
+
+        /// <summary>
         /// Verifies an argument is not null or empty
         /// </summary>
         /// <typeparam name="T"></typeparam>
