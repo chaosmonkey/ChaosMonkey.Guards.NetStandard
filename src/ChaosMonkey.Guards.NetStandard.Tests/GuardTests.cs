@@ -119,9 +119,9 @@ namespace ChaosMonkey.Guards.NetStandard.Tests
         {
             string argument = null;
 
-            var exception = Assert.Throws<ArgumentNullException>(()=> Guard.IsNotNullOrWhitespace(argument, nameof(argument)));
+            var exception = Assert.Throws<ArgumentException>(()=> Guard.IsNotNullOrWhitespace(argument, nameof(argument)));
 
-            Assert.Equal("Value cannot be null.\r\nParameter name: argument", exception.Message);
+            Assert.Equal("Parameter 'argument' cannot be empty or whitespace only, but was '[NULL]'.\r\nParameter name: argument", exception.Message);
         }
 
         [Fact]
@@ -129,9 +129,9 @@ namespace ChaosMonkey.Guards.NetStandard.Tests
         {
             string argument = null;
 
-            var exception = Assert.Throws<ArgumentNullException>(() => Guard.IsNotNullOrWhitespace(argument, null));
+            var exception = Assert.Throws<ArgumentException>(() => Guard.IsNotNullOrWhitespace(argument, null));
 
-            Assert.Equal("Value cannot be null.\r\nParameter name: [Unknown Argument Name]", exception.Message);
+            Assert.Equal("Parameter '[Unknown Argument Name]' cannot be empty or whitespace only, but was '[NULL]'.\r\nParameter name: [Unknown Argument Name]", exception.Message);
         }
 
         [Fact]
