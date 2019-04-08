@@ -80,11 +80,7 @@ namespace ChaosMonkey.Guards
             if (string.IsNullOrWhiteSpace(argument))
             {
                 var name = GetSafeArgumentName(argumentName);
-                if (argument == null)
-                {
-                    throw new ArgumentNullException(name);
-                }
-                var state = (argument.Length > 0) ? "[WHITESPACE-ONLY]" : "[EMPTY]";
+                var state = (argument == null) ? "[NULL]" : (argument.Length > 0) ? "[WHITESPACE-ONLY]" : "[EMPTY]";
                 throw new ArgumentException($"Parameter '{name}' cannot be empty or whitespace only, but was '{state}'.", name);
             }
             return argument;
